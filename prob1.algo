@@ -1,0 +1,30 @@
+ALGORITHM sum_tab
+VAR
+tab_1:ARRAY_OF INTEGER[]
+tab_2:ARRAY_OF INTEGER[] 
+i,j,sum: INTEGER
+BEGIN
+sum:=0
+tab_1:={3,1,7,9}
+tab_2:={2,4,1,9,3}
+FOR i FROM 0 TO tab_1.length-1 STEP 1  DO
+    FOR J FROM 0 TO tab_2.length-1 STEP 1  DO
+        IF (tab_1[i]=tab_2[j]) THEN
+        BREAK
+        END_IF
+        IF (j=tab_2.length-1) THEN
+            sum=sum+tab_1[i]
+        END_IF
+    END_FOR
+END_FOR
+FOR i FROM 0 TO tab_2.length-1 STEP 1  DO
+    FOR J FROM 0 TO tab_1.length-1 STEP 1  DO
+        IF (tab_2[i]=tab_1[j]) THEN
+        BREAK
+        END_IF
+        IF (j=tab_1.length-1) THEN
+            sum=sum+tab_2[i]
+        END_IF
+    END_FOR
+write ("donne la somme", sum)
+END_FOR
